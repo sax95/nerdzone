@@ -1,0 +1,49 @@
+/* Importa Tailwind CSS (versione 4: basta questa riga) */
+@import "tailwindcss";
+
+/* Font installati nel progetto (non dipendono da servizi esterni):
+   - Chakra Petch: squadrato, da HUD di videogioco → titoli e logo
+   - Instrument Sans: leggibile e sobrio → testo normale */
+@import "@fontsource/chakra-petch/600.css";
+@import "@fontsource/chakra-petch/700.css";
+@import "@fontsource-variable/instrument-sans/wght.css";
+
+/* Variabili del tema: Tailwind crea in automatico le classi font-sans, font-display
+   e i colori (es. bg-panel, text-neon-violet) a partire da questi nomi */
+@theme {
+  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
+
+  /* Colore del pannello dei contenuti: la linguetta usa lo STESSO colore per fondersi */
+  --color-panel: #120d26;
+  --color-neon-violet: #a855f7;
+  --color-neon-cyan: #22d3ee;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background: #07051a;
+  color: #fff;
+}
+
+/* Nasconde la barra di scorrimento (resta possibile scorrere con la rotella) */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Barra di scorrimento sottile e scura per il pannello delle notizie */
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.15) transparent;
+}
